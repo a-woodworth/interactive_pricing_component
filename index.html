@@ -1,39 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    
+    <title>Frontend Mentor | Interactive pricing component</title>
+  </head>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive pricing component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  Simple, traffic-based pricing
-  Sign-up for our 30-day trial. No credit card required. 
-
-  Pageviews
-  $ /month
-
-  Monthly Billing
-  Yearly Billing 25% discount
-
-  Unlimited websites
-  100% data ownership
-  Email reports
-
-  Start my trial
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+  <body>
+    <header>
+      <h1 class="sr-only">TechStack – Supporting Your Hyperautomation Needs</h1>
+    </header>
+    <main>
+      <!-- Interactive Pricing Component -->
+      <section>
+        <h2>Simple, traffic-based pricing</h2>
+        <form class="free-trial-offer" id="30DayTrial">
+          <fieldset>
+            <legend>Sign-up for our 30-day trial. No credit card required.</legend>
+            <div class="range-group">
+              <label for="pageview-range">
+                <span aria-label="100000">100k</span> pageviews
+              </label>
+              <div class="range-wrapper">
+                <input 
+                  type="range"
+                  id="pageview-range"
+                  name="pageviews"
+                  min="0"
+                  max="100"
+                  value="50"
+                  step="25">
+                <div class="range-track" aria-hidden="true">
+                  <span class="range-fill"></span>
+                  <span class="range-thumb"></span>
+                </div>
+                <output for="rangeValue" aria-hidden="true">100000</output>
+              </div>
+              <p class="pageview-price">
+                <span class="pageview-price__amount">$16.00</span> / month
+              </p>
+            </div>
+            <div class="switch-container">
+              <span class="switch__label">Monthly Billing</span>
+              <button class="switch__btn" type="button" aria-label="billing toggle" aria-pressed="false">
+                <span class="switch__circle" aria-hidden="true"></span>
+              </button>
+              <span class="switch__label--active">Yearly Billing</span>
+              <span class="bill__discount" aria-label="25% off discount">25%</span>
+            </div>
+            <ul>
+              <li>Unlimited websites</li>
+              <li>100% data ownership</li>
+              <li>Email reports</li>
+            </ul>
+            <button class="btn btn__cta" type="submit">
+                Start my trial 
+            </button>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <div class="main-footer">
+        <p class="attribution">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="https://github.com/a-woodworth" target="_blank">a-woodworth</a>.</p>
+      </div>
+    </footer>
+  </body>
 </html>
