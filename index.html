@@ -18,49 +18,52 @@
     </header>
     <main>
       <!-- Interactive Pricing Component -->
-      <section>
-        <h2>Simple, traffic-based pricing</h2>
-        <form class="free-trial-offer" id="30DayTrial">
+      <section class="cta__30-day-trial">
+        <h2 class="cta__title">Simple, traffic-based pricing</h2>
+        <form id="30DayTrial">
           <fieldset>
             <legend>Sign-up for our 30-day trial. No credit card required.</legend>
             <div class="range-group">
-              <label for="pageview-range">
-                <span>100k</span> pageviews
+              <label for="pageviews">
+                <span class="cta__plan">100k</span> pageviews
               </label>
               <div class="range-wrapper">
                 <input 
                   type="range"
-                  id="pageview-range"
+                  id="pageviews"
                   name="pageviews"
                   min="0"
                   max="100"
-                  value="50"
+                  value="50" 
                   step="25">
                 <div class="range-track" aria-hidden="true">
                   <span class="range-fill"></span>
                   <span class="range-thumb"></span>
                 </div>
-                <output for="pageview-range" aria-hidden="true">100000</output>
               </div>
-              <p class="pageview-price">
-                <span class="pageview-price__amount">$16.00</span> / month
+              <p class="cta__price">
+                <span>$16.00</span> / month
               </p>
             </div>
             <div class="switch-container">
-              <span class="switch__label">Monthly Billing</span>
-              <button class="switch__btn" type="button" aria-label="billing toggle" aria-pressed="false">
+              <p class="cta__billing-cycle">Monthly Billing</p>
+              <button class="btn btn__switch" 
+                type="button" 
+                aria-label="billing toggle" 
+                aria-pressed="false">
                 <span class="switch__circle" aria-hidden="true"></span>
               </button>
-              <span class="switch__label--active">Yearly Billing</span>
-              <span class="bill__discount">25%</span>
+              <p class="cta__billing-cycle">
+                Yearly Billing<span class="cta__discount">25%</span>
+              </p>
             </div>
-            <ul>
+            <ul class="cta__features-list">
               <li>Unlimited websites</li>
               <li>100% data ownership</li>
               <li>Email reports</li>
             </ul>
-            <button class="btn btn__cta" type="submit">
-                Start my trial 
+            <button class="btn btn__cta--submit" type="submit">
+              Start my trial 
             </button>
           </fieldset>
         </form>
@@ -71,5 +74,6 @@
         <p class="attribution">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="https://github.com/a-woodworth" target="_blank">a-woodworth</a>.</p>
       </div>
     </footer>
+    <script src="app.js"></script>
   </body>
 </html>
