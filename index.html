@@ -20,54 +20,62 @@
       <section class="cta__30-day-trial">
         <h2 class="cta__title">Simple, traffic-based pricing</h2>
         <form id="30DayTrial">
-          <fieldset>
-            <legend>Sign-up for our 30-day trial. No credit card required.</legend>
-            <div class="range-group">
-              <p class="cta__plan" aria-hidden="true">
-                <span data-js="pageviews">100k</span> pageviews
-              </p>
-              <p class="cta__price" aria-hidden="true">
-                <span data-js="price">$16.00</span> / month
-              </p>
-              <div class="range-wrapper">
-                <label for="pageviews" class="sr-only">Select pageviews price plan</label>
-                <input 
-                  type="range"
-                  id="pageviews"
-                  name="pageviews"
-                  min="0"
-                  max="100"
-                  value="50" 
-                  step="25"
-                  aria-describedby="description">
-                <p id="description" class="sr-only">
-                  <span data-js="aria-pageviews">100k</span> pageviews
-                  <span data-js="aria-price">$16.00</span> per month
-                </p>
-              </div>
-            </div>
-            <div class="switch-container">
-              <p class="cta__billing-cycle">Monthly Billing</p>
-              <button class="btn btn__switch" 
-                type="button" 
-                aria-label="billing toggle" 
-                aria-pressed="false"
-                data-js="switch">
-                <span class="switch__circle" aria-hidden="true"></span>
-              </button>
-              <p class="cta__billing-cycle">
-                Yearly Billing<span class="cta__discount">25%</span>
+          <h3>Sign-up for our 30-day trial. No credit card required.</h3>
+          <div class="range-group">
+            <p class="cta__plan" aria-hidden="true">
+              <span data-js="pageviews">100k</span> pageviews
+            </p>
+            <p class="cta__price" aria-hidden="true">
+              <span data-js="price">$16.00</span> / month
+            </p>
+            <div class="range-wrapper">
+              <label for="pageviews" class="sr-only">Select pageviews price plan</label>
+              <input 
+                type="range"
+                id="pageviews"
+                name="pageviews"
+                min="0"
+                max="100"
+                value="50" 
+                step="25"
+                aria-describedby="description">
+              <p id="description" class="sr-only" aria-live="polite" aria-atomic="true">
+                <span data-js="aria-pageviews">100k</span> pageviews
+                <span data-js="aria-price">$16.00</span> per month
               </p>
             </div>
-            <ul class="cta__features-list">
-              <li>Unlimited websites</li>
-              <li>100% data ownership</li>
-              <li>Email reports</li>
-            </ul>
-            <button class="btn btn__cta--submit" type="submit">
-              Start my trial 
-            </button>
+          </div>
+          <fieldset aria-label="billing switch" role="radiogroup">
+            <legend class="sr-only">
+              Select Billing Plan
+            </legend>
+            <div class="radio-switch">
+              <label for="monthly" class="cta__billing-cycle">Monthly Billing</label>
+              <span class="radio-switch__wrapper">
+                <input type="radio" 
+                  name="billing" 
+                  value="monthly" 
+                  id="monthly" 
+                  checked>
+                <input type="radio" 
+                  name="billing" 
+                  value="yearly" 
+                  id="yearly">
+                <span aria-hidden="true" class="radio-switch__background"></span>
+                <span aria-hidden="true" class="radio-switch__circle"></span>
+              </span>
+              <label for="yearly" class="cta__billing-cycle">Yearly Billing</label>
+              <span class="cta__discount">25%</span>
+            </div>
           </fieldset>
+          <ul class="cta__features-list">
+            <li>Unlimited websites</li>
+            <li>100% data ownership</li>
+            <li>Email reports</li>
+          </ul>
+          <button class="btn btn__cta--submit" type="submit">
+            Start my trial 
+          </button>
         </form>
       </section>
     </main>
