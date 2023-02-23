@@ -1,10 +1,9 @@
 const trialOffer30Form = document.forms['30DayTrial'];
 const range = trialOffer30Form.elements.pageviews;
+const billingPlan = trialOffer30Form.elements.billing;
 const pages = document.querySelector('[data-js="pageviews"]');
 const cost = document.querySelector('[data-js="price"]');
-const ariaPages = document.querySelector('[data-js="aria-pageviews"]');
-const ariaCost = document.querySelector('[data-js="aria-price"]');
-const planTypeText = document.querySelector('[data-js="billing-plan-type"]');
+const ariaForRange = document.querySelector('[data-js="aria-range-output"]');
 
 const pricingTable = {
   pageviews: [
@@ -29,13 +28,14 @@ function numberToCurrency(amount) {
 // Update price if annual plan selected
 function calculateDiscount(price, percentage) {
   const discountTotal = Math.floor( (price * percentage) / 100 );
-  const reducedPrice = numberToCurrency( price - discountTotal );
+  const reducedPrice =  price - discountTotal;
   return reducedPrice;
 } 
 
-// Update plan details on range input
+// Update plan details on input
 function renderPlan(inputValue){
   const rangeInput = inputValue;
+  const billing = billingPlan.value;
 
   // Return range values to get plan info
   const plan = pricingTable.pageviews.map(value => {
@@ -48,13 +48,22 @@ function renderPlan(inputValue){
   const amount = pricingTable.pageviews[rangeIndex].price;
 
   pages.innerHTML = `${description}`;
-  ariaPages.innerHTML = `${description}`;
-  cost.innerHTML = `${numberToCurrency(amount)}`;
-  ariaCost.innerHTML = `${numberToCurrency(amount)}`;
+
+  // if yearly plan selected, apply 25% discount
+  if ( billing === 'yearly' ) {
+    const discountApplied = calculateDiscount(amount, pricingTable.discount.percent25);
+
+    cost.innerHTML = `${numberToCurrency(discountApplied)}`;
+    ariaForRange.innerHTML = `${description} pageviews ${numberToCurrency(discountApplied)} per month`;
+  } else {
+    cost.innerHTML = `${numberToCurrency(amount)}`;
+    ariaForRange.innerHTML = `${description} pageviews ${numberToCurrency(amount)} per month`;
+  }
 }
 
-range.addEventListener('change', () => {
+trialOffer30Form.addEventListener('change', () => {
   const rangeVal = Number(trialOffer30Form.elements.pageviews.value);
+
   renderPlan(rangeVal);
 });
 
