@@ -33,7 +33,7 @@ function calculateDiscount(price, percentage) {
 } 
 
 // Update plan details on input
-function renderPlan(inputValue){
+function renderPlan(inputValue) {
   const rangeInput = inputValue;
   const billing = billingPlan.value;
 
@@ -67,4 +67,11 @@ trialOffer30Form.addEventListener('change', () => {
   renderPlan(rangeVal);
 });
 
-// trialOffer30Form.addEventListener('submit', validateForm);
+trialOffer30Form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const data = new FormData(trialOffer30Form);
+  const selectedPlan = [...data.values()];
+  // console.log(selectedPlan);
+
+  // Send the data to new page/form for free trial enrollment
+});
