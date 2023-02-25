@@ -1,3 +1,17 @@
 // ___________________________________________________________________
 // Button Styles
 // ___________________________________________________________________
+
+.cta__30-day-trial button {
+  background-color: var(--secondary-color);
+  border: none;
+  border-radius: 20.5px;
+  color: var(--text-button);
+  cursor: pointer;
+  font-weight: var(--font-weight--bold);
+  max-width: 10.625rem;
+  padding: 1rem 0;
+  width: 100%;
+  text-decoration: none;
+  transition: 0.5s ease-in-out;
+}

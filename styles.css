@@ -1,5 +1,5 @@
 :root {
-  --bg-main: hsl(222 87% 97%);
+  --bg-main: hsl(230 100% 99%);
   --bg-discount: hsl(14 92% 95%);
   --bg-slider-empty: hsl(224 65% 95%);
   --bg-slider-full: hsl(174 77% 80%);
@@ -30,6 +30,7 @@ body {
   background-color: var(--tertiary-color);
   font-family: "Manrope", sans-serif;
   font-weight: var(--font-weight--regular);
+  line-height: 1.3;
   min-height: 100vh;
   position: relative;
 }
@@ -43,9 +44,23 @@ body::before {
   right: 0;
   z-index: -1;
 }
+@media (min-width: 33.75rem) {
+  body::before {
+    height: 28.125rem;
+  }
+}
+@media (min-width: 33.75rem) {
+  body {
+    background-color: var(--bg-main);
+  }
+}
 
 fieldset {
   border: none;
+}
+
+ul {
+  list-style-type: none;
 }
 
 .sr-only {
@@ -60,11 +75,156 @@ fieldset {
   width: 1px;
 }
 
+.cta__30-day-trial button {
+  background-color: var(--secondary-color);
+  border: none;
+  border-radius: 20.5px;
+  color: var(--text-button);
+  cursor: pointer;
+  font-weight: var(--font-weight--bold);
+  max-width: 10.625rem;
+  padding: 1rem 0;
+  width: 100%;
+  text-decoration: none;
+  transition: 0.5s ease-in-out;
+}
+
 .cta__30-day-trial form {
   background-color: var(--tertiary-color);
   box-shadow: 0px 20px 30px -5px rgba(127, 137, 185, 0.152073);
   border-radius: 8px;
+  margin: auto;
+  max-width: 33.75rem;
+  padding-bottom: 2rem;
   padding-top: 2.125rem;
+}
+.cta__30-day-trial form hr {
+  border: 1px solid var(--bg-slider-empty);
+  margin-bottom: 1.5rem;
+}
+
+.range-group {
+  display: grid;
+  grid-template-areas: "pageviews" "range" "price";
+}
+@media (min-width: 33.75rem) {
+  .range-group {
+    grid-template-areas: "pageviews price" "range range";
+    align-items: center;
+    justify-items: center;
+  }
+}
+
+.cta__plan {
+  grid-area: pageviews;
+  color: var(--primary-color);
+  font-size: 0.75rem;
+  font-weight: var(--font-weight--bold);
+  letter-spacing: 1.7px;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+@media (min-width: 33.75rem) {
+  .cta__plan {
+    margin-bottom: 0;
+  }
+}
+
+.cta__price {
+  grid-area: price;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.4;
+  margin-bottom: 2.125rem;
+}
+.cta__price span:first-child {
+  color: var(--secondary-color);
+  font-size: 2rem;
+  font-weight: var(--font-weight--bold);
+  letter-spacing: -0.8px;
+  margin-right: 0.625rem;
+}
+.cta__price span:nth-child(2) {
+  color: var(--primary-color);
+  font-size: 0.875rem;
+  font-weight: var(--font-weight--regular);
+}
+@media (min-width: 33.75rem) {
+  .cta__price {
+    margin-bottom: 0;
+  }
+}
+
+.range-wrapper {
+  grid-area: range;
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 33.75rem) {
+  .range-wrapper {
+    margin-bottom: 2.5rem;
+    padding-top: 1.5rem;
+  }
+}
+
+.cta__discount {
+  background-color: var(--bg-discount);
+  border-radius: 9.5px;
+  color: var(--text-discount);
+  font-weight: var(--font-weight--bold);
+  font-size: 0.625rem;
+  line-height: 1.4;
+  padding: 2px 8px;
+}
+.cta__discount::before {
+  content: "-";
+}
+@media (min-width: 33.75rem) {
+  .cta__discount::before {
+    content: "";
+  }
+  .cta__discount::after {
+    content: " discount";
+  }
+}
+
+.radio-switch {
+  margin-bottom: 2.375rem;
+}
+.radio-switch label {
+  color: var(--primary-color);
+  font-weight: var(--font-weight--regular);
+  font-size: 0.75rem;
+}
+
+.cta__benefits {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 33.75rem) {
+  .cta__benefits {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-inline: 3rem;
+  }
+  .cta__benefits ul {
+    text-align: left;
+  }
+}
+
+.cta__features-list li {
+  color: var(--primary-color);
+  font-size: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.cta__features-list li:last-child {
+  margin-bottom: 2rem;
+}
+.cta__features-list li::before {
+  content: url("images/icon-check.svg");
+  margin-right: 1rem;
 }
 
 .cta__30-day-trial {
@@ -83,7 +243,7 @@ fieldset {
 .cta__title {
   color: var(--secondary-color);
   font-size: 1.25rem;
-  line-height: 1.35;
+  line-height: 1.4;
   margin: 0 auto 0.5rem;
   max-width: 20rem;
 }
@@ -91,7 +251,7 @@ fieldset {
 .cta__subheading {
   color: var(--primary-color);
   font-size: 0.8125rem;
-  line-height: 1.76;
+  line-height: 1.8;
   max-width: 11.25rem;
   margin: auto;
 }
