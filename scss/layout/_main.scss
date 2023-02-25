@@ -1,0 +1,32 @@
+// ___________________________________________________________________
+// Main Styles
+// ___________________________________________________________________
+
+.cta__30-day-trial {
+  padding: 3.5625rem 1.5rem 0 1.5rem;
+  text-align: center;
+}
+
+.cta__heading {
+  background-image: url('images/pattern-circles.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 2rem;
+  padding: 2rem 0;
+}
+
+.cta__title {
+  color: var(--secondary-color);
+  font-size: 1.25rem;
+  line-height: 1.35;
+  margin: 0 auto 0.5rem;
+  max-width: 20rem;
+}
+
+.cta__subheading {
+  color: var(--primary-color);
+  font-size: 0.8125rem;
+  line-height: 1.76;
+  max-width: 11.25rem;
+  margin: auto;
+}
