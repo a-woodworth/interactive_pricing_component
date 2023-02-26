@@ -9,12 +9,13 @@
   --bg-slider-empty: hsl(224 65% 95%);
   --bg-slider-full: hsl(174 77% 80%);
   --bg-toggle: hsl(223 50% 87%);
-  --primary-color: hsl(225 20% 60%);
+  --bg-toggle-hover: hsl(174 73% 70%);
+  --primary-color: hsl(225 20% 40%); // Darkened color to pass AA contrast ratio
   --secondary-color: hsl(227 35% 25%);
   --tertiary-color: hsl(0 0% 100%);
   --accent-color: hsl(174 86% 45%);
   --text-button: hsl(226 100% 87%);
-  --text-discount: hsl(15 100% 70%);
+  --text-discount: hsl(15 100% 40%); // Darkened color to pass AA contrast ratio
   // Text
   --font-weight--bold: 800;
   --font-weight--regular: 600;
@@ -42,6 +43,9 @@ body {
 
   &::before {
     background-image: url('images/bg-pattern.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom left;
     content: '';
     height: 25rem;
     position: absolute;
@@ -66,6 +70,10 @@ fieldset {
 
 ul {
   list-style-type: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 // Screen reader styles
