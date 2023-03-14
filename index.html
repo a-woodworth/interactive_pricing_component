@@ -53,7 +53,7 @@
               Select Billing Plan
             </legend>
             <div class="radio-switch">
-              <label for="monthly" class="cta__billing-cycle">Monthly Billing</label>
+              <label for="monthly" class="cta__billing-cycle monthly-billing">Monthly Billing</label>
               <span class="radio-switch__wrapper">
                 <input type="radio" 
                   name="billing" 
@@ -67,8 +67,10 @@
                 <span aria-hidden="true" class="radio-switch__background"></span>
                 <span aria-hidden="true" class="radio-switch__circle"></span>
               </span>
-              <label for="yearly" class="cta__billing-cycle">Yearly Billing</label>
-              <span class="cta__discount">25%</span>
+              <div class="cta__discount-wrapper">
+                <label for="yearly" class="cta__billing-cycle">Yearly Billing</label>
+                <span class="cta__discount">25%</span>
+              </div>
             </div>
           </fieldset>
           <hr>

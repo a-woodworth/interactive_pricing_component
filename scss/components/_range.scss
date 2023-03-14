@@ -4,6 +4,10 @@
 
 .range-wrapper {
   padding-inline: 1.5rem;
+
+  @media (min-width: 33.75rem) {
+    padding-inline: 3rem;
+  }
 }
 
 .js-price-range {
@@ -37,7 +41,6 @@
     background-repeat: no-repeat;
     border-radius: 50%;
     box-shadow: 0px 15px 30px rgba(0, 255, 231, 0.6);
-    cursor: grabbing;
     height: 2.5rem;
     margin-top: -1rem;
     width: 2.5rem;
@@ -52,7 +55,6 @@
     border: none;
     border-radius: 50%;
     box-shadow: 0px 15px 30px rgba(0, 255, 231, 0.6);
-    cursor: grabbing;
     height: 2.5rem;
     margin-top: -1rem;
     width: 2.5rem;
@@ -61,12 +63,34 @@
   &:focus {
     outline: none;
   }
+
+  &:active {
+    cursor: grabbing;
+  }
+
   // Chrome, Edge, Safari 
   &:focus::-webkit-slider-thumb {
     outline: 2px auto -webkit-focus-ring-color;
   }
+
+  &:hover::-webkit-slider-thumb {
+    background-color: var(--bg-hover);
+  }
+
+  &:active::-webkit-slider-thumb {
+    background-color: var(--bg-slider-thumb-focus);
+  }
+
   // Firefox
   &:focus::-moz-range-thumb {
     outline: 2px auto Highlight;
+  }
+
+  &:hover::-moz-range-thumb {
+    background-color: var(--bg-hover);
+  }
+
+  &:active::-moz-range-thumb {
+    background-color: var(--bg-slider-thumb-focus);
   }
 }

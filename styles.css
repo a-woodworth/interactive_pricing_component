@@ -6,7 +6,7 @@
   --bg-slider-thumb: hsl(174 86% 45%);
   --bg-slider-thumb-focus: hsl(174 66% 41%);
   --bg-toggle: hsl(223 50% 87%);
-  --bg-toggle-hover: hsl(174 73% 70%);
+  --bg-hover: hsl(174 73% 70%);
   --primary-color: hsl(225 20% 40%);
   --secondary-color: hsl(227 35% 25%);
   --tertiary-color: hsl(0 0% 100%);
@@ -135,6 +135,7 @@ a {
   font-weight: var(--font-weight--bold);
   letter-spacing: 1.7px;
   margin-bottom: 1.5rem;
+  text-align: center;
   text-transform: uppercase;
 }
 @media (min-width: 33.75rem) {
@@ -171,12 +172,30 @@ a {
 
 .range-wrapper {
   grid-area: range;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
+  width: 100%;
 }
 @media (min-width: 33.75rem) {
   .range-wrapper {
-    margin-bottom: 2.5rem;
+    margin-bottom: 3.5rem;
     padding-top: 1.5rem;
+  }
+}
+
+.monthly-billing {
+  text-align: right;
+}
+
+.cta__discount-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.3125rem;
+}
+@media (min-width: 22rem) {
+  .cta__discount-wrapper {
+    flex-direction: row;
   }
 }
 
@@ -202,6 +221,10 @@ a {
 }
 
 .radio-switch {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 43px 1fr;
+  column-gap: 0.75rem;
   font-size: 0.75rem;
   font-weight: var(--font-weight--regular);
   margin-bottom: 2.375rem;
@@ -225,15 +248,13 @@ a {
   outline: 2px auto -webkit-focus-ring-color;
 }
 .radio-switch input[type=radio]:hover ~ .radio-switch__background {
-  background-color: var(--bg-toggle-hover);
+  background-color: var(--bg-hover);
 }
 
 .radio-switch__wrapper {
   display: inline-block;
   height: 1.375rem;
-  margin: 0 0.75rem;
   position: relative;
-  vertical-align: middle;
   width: 2.6875rem;
 }
 
@@ -306,6 +327,11 @@ a {
 .range-wrapper {
   padding-inline: 1.5rem;
 }
+@media (min-width: 33.75rem) {
+  .range-wrapper {
+    padding-inline: 3rem;
+  }
+}
 
 .js-price-range {
   -webkit-appearance: none;
@@ -333,7 +359,6 @@ a {
   background-repeat: no-repeat;
   border-radius: 50%;
   box-shadow: 0px 15px 30px rgba(0, 255, 231, 0.6);
-  cursor: grabbing;
   height: 2.5rem;
   margin-top: -1rem;
   width: 2.5rem;
@@ -346,7 +371,6 @@ a {
   border: none;
   border-radius: 50%;
   box-shadow: 0px 15px 30px rgba(0, 255, 231, 0.6);
-  cursor: grabbing;
   height: 2.5rem;
   margin-top: -1rem;
   width: 2.5rem;
@@ -354,11 +378,26 @@ a {
 .js-price-range:focus {
   outline: none;
 }
+.js-price-range:active {
+  cursor: grabbing;
+}
 .js-price-range:focus::-webkit-slider-thumb {
   outline: 2px auto -webkit-focus-ring-color;
 }
+.js-price-range:hover::-webkit-slider-thumb {
+  background-color: var(--bg-hover);
+}
+.js-price-range:active::-webkit-slider-thumb {
+  background-color: var(--bg-slider-thumb-focus);
+}
 .js-price-range:focus::-moz-range-thumb {
   outline: 2px auto Highlight;
+}
+.js-price-range:hover::-moz-range-thumb {
+  background-color: var(--bg-hover);
+}
+.js-price-range:active::-moz-range-thumb {
+  background-color: var(--bg-slider-thumb-focus);
 }
 
 .container {
@@ -369,7 +408,6 @@ a {
 
 .cta__30-day-trial {
   padding: 3.5625rem 1.5rem 0 1.5rem;
-  text-align: center;
 }
 
 .cta__heading {
