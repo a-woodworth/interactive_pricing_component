@@ -18,6 +18,18 @@ const pricingTable = {
     { percent25: 25 }
 };
 
+// Update slider fill
+function fillSlider() {
+  const progressBar = 'hsl(174 77% 80%)';
+  const backgroundTrack = 'hsl(224 65% 95%)';
+  const trackIncrement = `${(range.value - range.min) / (range.max - range.min) * 100}%`;
+
+  range.style.backgroundImage = 
+    `linear-gradient(90deg,
+    ${progressBar} ${trackIncrement},
+    ${backgroundTrack} ${trackIncrement})`;
+}
+
 // Format number to US dollars
 function numberToCurrency(amount) {
   const valueAsDollars = { style: 'currency', currency: 'USD', maximumFractionDigits: 2 }
@@ -60,6 +72,12 @@ function renderPlan(inputValue) {
     ariaForRange.innerHTML = `${description} pageviews ${numberToCurrency(amount)} per month`;
   }
 }
+
+// Fill range slider with default value
+fillSlider();
+
+// Update range slider progress on input
+range.addEventListener('input', fillSlider);
 
 trialOffer30Form.addEventListener('change', () => {
   const rangeVal = Number(trialOffer30Form.elements.pageviews.value);
