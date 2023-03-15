@@ -33,7 +33,7 @@ body {
   background-color: var(--tertiary-color);
   font-family: "Manrope", sans-serif;
   font-weight: var(--font-weight--regular);
-  line-height: 1.3;
+  line-height: 1.4;
   min-height: 100vh;
   position: relative;
 }
@@ -115,6 +115,11 @@ a {
   border: 1px solid var(--bg-slider-empty);
   margin-bottom: 1.5rem;
 }
+@media (min-width: 33.75rem) {
+  .cta__30-day-trial form hr {
+    margin-bottom: 2rem;
+  }
+}
 
 .cta__plan {
   grid-area: pageviews;
@@ -128,6 +133,9 @@ a {
 }
 @media (min-width: 33.75rem) {
   .cta__plan {
+    font-size: 0.9375rem;
+    letter-spacing: 2px;
+    justify-self: flex-start;
     margin-bottom: 0;
   }
 }
@@ -147,6 +155,13 @@ a {
   letter-spacing: -0.8px;
   margin-right: 0.625rem;
 }
+@media (min-width: 33.75rem) {
+  .cta__price span:first-child {
+    font-size: 2.5rem;
+    letter-spacing: -1px;
+    margin-right: 0.5rem;
+  }
+}
 .cta__price span:nth-child(2) {
   color: var(--primary-color);
   font-size: 0.875rem;
@@ -154,6 +169,8 @@ a {
 }
 @media (min-width: 33.75rem) {
   .cta__price {
+    font-size: 1rem;
+    justify-self: flex-end;
     margin-bottom: 0;
   }
 }
@@ -208,9 +225,6 @@ a {
     justify-content: space-between;
     padding-inline: 3rem;
   }
-  .cta__benefits ul {
-    text-align: left;
-  }
 }
 
 .cta__features-list li {
@@ -222,9 +236,19 @@ a {
 .cta__features-list li:last-child {
   margin-bottom: 2rem;
 }
+@media (min-width: 33.75rem) {
+  .cta__features-list li:last-child {
+    margin-bottom: 0;
+  }
+}
 .cta__features-list li::before {
   content: url("images/icon-check.svg");
   margin-right: 1rem;
+}
+@media (min-width: 33.75rem) {
+  .cta__features-list li {
+    text-align: left;
+  }
 }
 
 .radio-switch {
@@ -311,6 +335,7 @@ a {
     grid-template-areas: "pageviews price" "range range";
     align-items: center;
     justify-items: center;
+    padding-inline: 3rem;
   }
 }
 
@@ -323,7 +348,7 @@ a {
 @media (min-width: 33.75rem) {
   .range-wrapper {
     margin-bottom: 3.5rem;
-    padding-inline: 3rem;
+    padding-inline: 0;
     padding-top: 1.5rem;
   }
 }
@@ -415,21 +440,39 @@ a {
   padding: 2rem 0;
   text-align: center;
 }
+@media (min-width: 33.75rem) {
+  .cta__heading {
+    margin-bottom: 3.375rem;
+    padding: 2.3125rem 0;
+  }
+}
 
 .cta__title {
   color: var(--secondary-color);
   font-size: 1.25rem;
   line-height: 1.4;
   margin: 0 auto 0.5rem;
-  max-width: 20rem;
+}
+@media (min-width: 33.75rem) {
+  .cta__title {
+    font-size: 1.75rem;
+    margin: 0 auto 0.75rem;
+  }
 }
 
 .cta__subheading {
   color: var(--primary-color);
   font-size: 0.8125rem;
   line-height: 1.8;
-  max-width: 11.25rem;
   margin: auto;
+  width: 11.25rem;
+}
+@media (min-width: 33.75rem) {
+  .cta__subheading {
+    font-size: 0.9375rem;
+    line-height: 1.3;
+    width: 24.6875rem;
+  }
 }
 
 .attribution {
