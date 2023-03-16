@@ -73,7 +73,7 @@ function renderPlan(inputValue) {
   }
 }
 
-// Fill range slider with default value
+// Fill range slider
 fillSlider();
 
 // Update range slider progress on input
@@ -83,13 +83,4 @@ trialOffer30Form.addEventListener('change', () => {
   const rangeVal = Number(trialOffer30Form.elements.pageviews.value);
 
   renderPlan(rangeVal);
-});
-
-trialOffer30Form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const data = new FormData(trialOffer30Form);
-  const selectedPlan = [...data.values()];
-  // console.log(selectedPlan);
-
-  // Send the data to new page/form for free trial enrollment
 });
