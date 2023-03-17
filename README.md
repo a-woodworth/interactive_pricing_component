@@ -32,7 +32,7 @@ Users should be able to:
 ![Mobile Sceenshot](/screenshots/mobile-screenshot-375px.png)
 
 ### Links
-- Solution URL: [Solution]()
+- Solution URL: [Solution](https://www.frontendmentor.io/solutions/interactive-pricing-component-built-with-css-grid-and-javascript-EOlM1L5Mbj)
 - Live Site URL: [Live Site](https://a-woodworth.github.io/interactive_pricing_component/)
 
 ### Built with
