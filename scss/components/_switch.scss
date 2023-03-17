@@ -36,6 +36,10 @@
       background-color: var(--bg-hover);
     }
   }
+
+  @media (min-width: 33.75rem) {
+    margin-bottom: 2.5rem
+  }
 }
 
 .radio-switch__wrapper {

@@ -120,6 +120,11 @@ a {
     margin-bottom: 2rem;
   }
 }
+@media (min-width: 33.75rem) {
+  .cta__30-day-trial form {
+    padding-top: 2.5rem;
+  }
+}
 
 .cta__plan {
   grid-area: pageviews;
@@ -282,6 +287,11 @@ a {
 .radio-switch input[type=radio]:hover ~ .radio-switch__background {
   background-color: var(--bg-hover);
 }
+@media (min-width: 33.75rem) {
+  .radio-switch {
+    margin-bottom: 2.5rem;
+  }
+}
 
 .radio-switch__wrapper {
   display: inline-block;
@@ -347,7 +357,7 @@ a {
 }
 @media (min-width: 33.75rem) {
   .range-wrapper {
-    margin-bottom: 3.5rem;
+    margin-bottom: 3.25rem;
     padding-inline: 0;
     padding-top: 1.5rem;
   }
