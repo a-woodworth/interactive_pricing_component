@@ -49,15 +49,12 @@ function renderPlan(inputValue) {
   const rangeInput = inputValue;
   const billing = billingPlan.value;
 
-  // Return range values to get plan info
-  const plan = pricingTable.pageviews.map(value => {
-    return value.rangeValue;
-  });
-  const rangeIndex = plan.indexOf(rangeInput);
+  // Get plan info
+  const plan = pricingTable.pageviews.findIndex((plan => plan.rangeValue === rangeInput));
 
   // Update plan details - pageviews and price
-  const description = pricingTable.pageviews[rangeIndex].description;
-  const amount = pricingTable.pageviews[rangeIndex].price;
+  const description = pricingTable.pageviews[plan].description;
+  const amount = pricingTable.pageviews[plan].price;
 
   pages.innerHTML = `${description}`;
 
